@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -39,4 +39,169 @@ footer {
     border-bottom: 1px solid #ddd;
     margin-bottom: 20px;
     padding-bottom: 20px;
+} */
+
+/* Reset default margin and padding */
+
+
+body, h1, h2, h3, p, ul, li, form, input, textarea {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header h1 {
+    float: left;
+}
+
+nav ul {
+    float: right;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    background: url('hero-background.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* About Section */
+.about {
+    padding: 40px 0;
+    background: #fff;
+    text-align: center;
+}
+
+.about p {
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Portfolio Section */
+.portfolio {
+    background: #f4f4f4;
+    padding: 40px 0;
+}
+
+.portfolio-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.portfolio-item {
+    flex: 1 1 30%;
+    margin: 10px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.portfolio-item img {
+    max-width: 100%;
+}
+
+/* Contact Section */
+.contact {
+    padding: 40px 0;
+    background: #fff;
+    text-align: center;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+form button {
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        float: none;
+        text-align: center;
+    }
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+.btn {
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
 }
