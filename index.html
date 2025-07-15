@@ -1,121 +1,623 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>My Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Welcome to My Portfolio</h2>
-            <p>Hello! I'm Zach, a computer science student at Brown. Here are some of my projects:</p>
-            <ul>
-                <li><a href="project1.html">Project 1</a> - Brief description of Project 1.</li>
-                <li><a href="project2.html">Project 2</a> - Brief description of Project 2.</li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 My Portfolio</p>
-    </footer>
-    <script src="scripts.js"></script>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Zach Atalay - Computer Science Portfolio</title>
+    <meta name="description" content="Computer Science Portfolio - Zach Atalay at Brown University">
     <link rel="stylesheet" href="styles.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <h1>Cool Theme</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-primary">ZA</span><span class="brand-secondary">.dev</span>
+            </div>
+            <div class="nav-links desktop-nav">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <button onclick="scrollToSection('#contact')" class="hire-btn">Hire Me</button>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span class="hamburger"></span>
+            </button>
         </div>
-    </header>
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="#about" class="mobile-link" onclick="closeMobileMenu()">About</a>
+            <a href="#projects" class="mobile-link" onclick="closeMobileMenu()">Projects</a>
+            <a href="#skills" class="mobile-link" onclick="closeMobileMenu()">Skills</a>
+            <a href="#contact" class="mobile-link" onclick="closeMobileMenu()">Contact</a>
+            <button onclick="scrollToSection('#contact'); closeMobileMenu();" class="hire-btn">Hire Me</button>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section class="hero">
+        <div class="hero-bg" id="hero-bg"></div>
+        <div class="particles" id="particles"></div>
         <div class="hero-content">
-            <h2>Welcome to My Cool Theme</h2>
-            <p>Explore the beauty of modern web design with our theme.</p>
-            <a href="#portfolio" class="btn">See My Work</a>
+            <div class="cpu-image floating">
+                <div class="cpu-chip"></div>
+            </div>
+            <h1 class="hero-title">
+                <span class="gradient-text">Zach Atalay</span>
+            </h1>
+            <div class="hero-subtitle">Computer Science @ Brown University</div>
+            <div class="hero-tagline">Hardware Enthusiast • Software Developer • Innovation Driver</div>
+            <p class="hero-description">
+                Bridging the gap between silicon and software, I craft solutions that push 
+                the boundaries of what's possible in computing technology.
+            </p>
+            <div class="hero-buttons">
+                <button onclick="scrollToSection('#projects')" class="btn primary-btn">View My Work</button>
+                <button onclick="scrollToSection('#contact')" class="btn outline-btn">Get In Touch</button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="chevron-down"></div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="section about-section">
         <div class="container">
-            <h2>About Us</h2>
-            <p>Learn more about what we do and our mission.</p>
+            <h2 class="section-title">About <span class="text-primary">Me</span></h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        I'm a passionate Computer Science student at Brown University with a deep 
+                        fascination for computer hardware and its intersection with software. My 
+                        journey began with dismantling old computers as a kid, and now I'm building 
+                        the next generation of computing solutions.
+                    </p>
+                    <p>
+                        Currently pursuing my Bachelor's degree with a focus on computer systems, 
+                        I'm particularly interested in how hardware design influences software 
+                        performance and user experience.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Rust</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">VHDL</span>
+                        <span class="tech-tag">Assembly</span>
+                    </div>
+                </div>
+                <div class="stats-card">
+                    <h3 class="stats-title">Quick Stats</h3>
+                    <div class="stats-list">
+                        <div class="stat-item">
+                            <span>Year at Brown</span>
+                            <span class="stat-value">Junior</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>GPA</span>
+                            <span class="stat-value">3.85/4.0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>Projects Completed</span>
+                            <span class="stat-value">15+</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>Hackathons Won</span>
+                            <span class="stat-value">3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="interests-grid">
+                <div class="interest-card">
+                    <div class="interest-icon">💻</div>
+                    <h3>Computer Architecture</h3>
+                    <p>Fascinated by CPU design, instruction sets, and low-level optimization</p>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">💾</div>
+                    <h3>Storage Systems</h3>
+                    <p>Exploring distributed storage, databases, and data persistence</p>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">🖥️</div>
+                    <h3>Graphics & Display</h3>
+                    <p>Computer graphics, rendering pipelines, and visual computing</p>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">⌨️</div>
+                    <h3>Human-Computer Interaction</h3>
+                    <p>Designing intuitive interfaces and improving user experiences</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
         <div class="container">
-            <h2>Portfolio</h2>
-            <div class="portfolio-items">
-                <div class="portfolio-item">
-                    <img src="project1.jpg" alt="Project 1">
-                    <h3>Project 1</h3>
+            <h2 class="section-title">Featured <span class="text-primary">Projects</span></h2>
+            
+            <div class="project-filters">
+                <button class="filter-btn active" onclick="filterProjects('all')">All</button>
+                <button class="filter-btn" onclick="filterProjects('Hardware')">Hardware</button>
+                <button class="filter-btn" onclick="filterProjects('Systems')">Systems</button>
+                <button class="filter-btn" onclick="filterProjects('Graphics')">Graphics</button>
+                <button class="filter-btn" onclick="filterProjects('Software')">Software</button>
+            </div>
+
+            <div class="projects-grid" id="projects-grid">
+                <div class="project-card" data-category="Hardware">
+                    <div class="project-header">
+                        <span class="project-category">Hardware</span>
+                        <div class="project-icon">🔧</div>
+                    </div>
+                    <h3 class="project-title">RISC-V Processor Design</h3>
+                    <p class="project-description">
+                        Designed and implemented a 5-stage pipelined RISC-V processor in VHDL with forwarding, hazard detection, and branch prediction.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">VHDL</span>
+                        <span class="tech-badge">Digital Logic</span>
+                        <span class="tech-badge">Vivado</span>
+                    </div>
+                    <div class="project-highlights">
+                        <div class="highlight">• 500MHz clock frequency</div>
+                        <div class="highlight">• 95% pipeline efficiency</div>
+                        <div class="highlight">• Full instruction set support</div>
+                    </div>
                 </div>
-                <div class="portfolio-item">
-                    <img src="project2.jpg" alt="Project 2">
-                    <h3>Project 2</h3>
+
+                <div class="project-card" data-category="Systems">
+                    <div class="project-header">
+                        <span class="project-category">Systems</span>
+                        <div class="project-icon">⚙️</div>
+                    </div>
+                    <h3 class="project-title">Distributed Memory System</h3>
+                    <p class="project-description">
+                        Built a fault-tolerant distributed memory system using Raft consensus algorithm with automatic leader election and log replication.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Go</span>
+                        <span class="tech-badge">Raft Protocol</span>
+                        <span class="tech-badge">gRPC</span>
+                    </div>
+                    <div class="project-highlights">
+                        <div class="highlight">• 99.9% uptime</div>
+                        <div class="highlight">• Sub-10ms latency</div>
+                        <div class="highlight">• Byzantine fault tolerance</div>
+                    </div>
                 </div>
-                <!-- Add more items as needed -->
+
+                <div class="project-card" data-category="Graphics">
+                    <div class="project-header">
+                        <span class="project-category">Graphics</span>
+                        <div class="project-icon">🎨</div>
+                    </div>
+                    <h3 class="project-title">GPU Ray Tracer</h3>
+                    <p class="project-description">
+                        Implemented a physically-based ray tracer using CUDA with real-time rendering of complex scenes with global illumination.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">CUDA</span>
+                        <span class="tech-badge">C++</span>
+                        <span class="tech-badge">OptiX</span>
+                    </div>
+                    <div class="project-highlights">
+                        <div class="highlight">• Real-time rendering</div>
+                        <div class="highlight">• Global illumination</div>
+                        <div class="highlight">• 1080p @ 60fps</div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="Hardware">
+                    <div class="project-header">
+                        <span class="project-category">Hardware</span>
+                        <div class="project-icon">🔧</div>
+                    </div>
+                    <h3 class="project-title">Neural Network Accelerator</h3>
+                    <p class="project-description">
+                        Designed custom silicon for neural network inference with specialized matrix multiplication units and on-chip memory optimization.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">SystemVerilog</span>
+                        <span class="tech-badge">ASIC Design</span>
+                        <span class="tech-badge">Synthesis</span>
+                    </div>
+                    <div class="project-highlights">
+                        <div class="highlight">• 50x speedup</div>
+                        <div class="highlight">• Low power design</div>
+                        <div class="highlight">• Configurable architecture</div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="Systems">
+                    <div class="project-header">
+                        <span class="project-category">Systems</span>
+                        <div class="project-icon">⚙️</div>
+                    </div>
+                    <h3 class="project-title">Operating System Kernel</h3>
+                    <p class="project-description">
+                        Built a Unix-like operating system kernel from scratch with virtual memory, file systems, and multithreading support.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">C</span>
+                        <span class="tech-badge">Assembly</span>
+                        <span class="tech-badge">Linux</span>
+                    </div>
+                    <div class="project-highlights">
+                        <div class="highlight">• Full memory management</div>
+                        <div class="highlight">• EXT2 filesystem</div>
+                        <div class="highlight">• Preemptive scheduling</div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="Software">
+                    <div class="project-header">
+                        <span class="project-category">Software</span>
+                        <div class="project-icon">💻</div>
+                    </div>
+                    <h3 class="project-title">Quantum Circuit Simulator</h3>
+                    <p class="project-description">
+                        Developed a quantum circuit simulator with visualization tools for educational purposes and algorithm prototyping.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">NumPy</span>
+                        <span class="tech-badge">React</span>
+                    </div>
+                    <div class="project-highlights">
+                        <div class="highlight">• 32-qubit support</div>
+                        <div class="highlight">• Interactive visualization</div>
+                        <div class="highlight">• Educational interface</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <h2 class="section-title">Technical <span class="text-primary">Skills</span></h2>
+            
+            <div class="skills-tabs">
+                <button class="skill-tab active" onclick="showSkillCategory('languages')">💻 Languages</button>
+                <button class="skill-tab" onclick="showSkillCategory('hardware')">🔧 Hardware</button>
+                <button class="skill-tab" onclick="showSkillCategory('software')">⚙️ Software</button>
+            </div>
+
+            <div class="skills-content">
+                <div id="languages" class="skill-category active">
+                    <h3 class="category-title">Programming Languages</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">C/C++</span>
+                                <span class="skill-level">95%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95%"></div>
+                            </div>
+                            <p class="skill-desc">Systems programming, performance optimization</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%"></div>
+                            </div>
+                            <p class="skill-desc">Data analysis, machine learning, automation</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Rust</span>
+                                <span class="skill-level">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%"></div>
+                            </div>
+                            <p class="skill-desc">Memory-safe systems programming</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">JavaScript/TypeScript</span>
+                                <span class="skill-level">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                            <p class="skill-desc">Full-stack web development</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">VHDL/Verilog</span>
+                                <span class="skill-level">75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                            <p class="skill-desc">Digital design, FPGA programming</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Assembly</span>
+                                <span class="skill-level">70%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 70%"></div>
+                            </div>
+                            <p class="skill-desc">Low-level optimization, embedded systems</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="hardware" class="skill-category">
+                    <h3 class="category-title">Hardware & Systems</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Computer Architecture</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%"></div>
+                            </div>
+                            <p class="skill-desc">CPU design, memory hierarchies</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">FPGA Development</span>
+                                <span class="skill-level">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                            <p class="skill-desc">Xilinx Vivado, Intel Quartus</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Digital Logic Design</span>
+                                <span class="skill-level">88%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 88%"></div>
+                            </div>
+                            <p class="skill-desc">Logic synthesis, timing analysis</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">PCB Design</span>
+                                <span class="skill-level">70%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 70%"></div>
+                            </div>
+                            <p class="skill-desc">Altium Designer, KiCad</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Embedded Systems</span>
+                                <span class="skill-level">82%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 82%"></div>
+                            </div>
+                            <p class="skill-desc">Microcontrollers, real-time systems</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Signal Processing</span>
+                                <span class="skill-level">75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                            <p class="skill-desc">DSP algorithms, filter design</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="software" class="skill-category">
+                    <h3 class="category-title">Software & Tools</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Operating Systems</span>
+                                <span class="skill-level">88%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 88%"></div>
+                            </div>
+                            <p class="skill-desc">Kernel development, Linux internals</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Distributed Systems</span>
+                                <span class="skill-level">82%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 82%"></div>
+                            </div>
+                            <p class="skill-desc">Consensus algorithms, fault tolerance</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Database Systems</span>
+                                <span class="skill-level">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                            <p class="skill-desc">SQL, NoSQL, query optimization</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Machine Learning</span>
+                                <span class="skill-level">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%"></div>
+                            </div>
+                            <p class="skill-desc">TensorFlow, PyTorch, model optimization</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Computer Graphics</span>
+                                <span class="skill-level">78%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 78%"></div>
+                            </div>
+                            <p class="skill-desc">OpenGL, CUDA, ray tracing</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Version Control</span>
+                                <span class="skill-level">92%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 92%"></div>
+                            </div>
+                            <p class="skill-desc">Git, collaborative development</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievements">
+                <p class="achievements-text">
+                    Always learning and exploring new technologies in the rapidly evolving field of computer science.
+                </p>
+                <div class="achievement-badges">
+                    <span class="achievement-badge">Brown Computer Science</span>
+                    <span class="achievement-badge">ACM Member</span>
+                    <span class="achievement-badge">IEEE Student Member</span>
+                    <span class="achievement-badge">Open Source Contributor</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="section contact-section">
         <div class="container">
-            <h2>Contact Us</h2>
-            <form action="#">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
+            <h2 class="section-title">Get In <span class="text-primary">Touch</span></h2>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 class="contact-title">Let's Connect</h3>
+                    <p class="contact-description">
+                        I'm always interested in discussing new opportunities, collaboration on 
+                        interesting projects, or just chatting about the latest developments in 
+                        computer hardware and software. Don't hesitate to reach out!
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-text">
+                                <p class="contact-label">Email</p>
+                                <a href="mailto:zachary_atalay@brown.edu" class="contact-value">zachary_atalay@brown.edu</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-text">
+                                <p class="contact-label">Phone</p>
+                                <a href="tel:+14015550123" class="contact-value">+1 (401) 555-0123</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                <p class="contact-label">Location</p>
+                                <span class="contact-value">Providence, RI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-section">
+                        <h4 class="social-title">Follow Me</h4>
+                        <div class="social-links">
+                            <a href="https://github.com/zachatalay" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <div class="social-icon">🐙</div>
+                            </a>
+                            <a href="https://linkedin.com/in/zachatalay" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <div class="social-icon">💼</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <h3 class="form-title">Send a Message</h3>
+                    <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                        <input type="text" name="name" placeholder="Your Name" required class="form-input">
+                        <input type="email" name="email" placeholder="Your Email" required class="form-input">
+                        <textarea name="message" placeholder="Your Message" required rows="6" class="form-textarea"></textarea>
+                        <button type="submit" class="form-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Cool Theme. All rights reserved.</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-name">
+                        <span class="brand-primary">Zach</span>
+                        <span class="brand-secondary"> Atalay</span>
+                    </div>
+                    <p class="footer-description">
+                        Computer Science @ Brown University<br>
+                        Building the future of computing
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <h3 class="footer-section-title">Quick Links</h3>
+                    <div class="footer-link-list">
+                        <a href="#about" class="footer-link">About</a>
+                        <a href="#projects" class="footer-link">Projects</a>
+                        <a href="#skills" class="footer-link">Skills</a>
+                        <a href="#contact" class="footer-link">Contact</a>
+                    </div>
+                </div>
+
+                <div class="footer-contact">
+                    <h3 class="footer-section-title">Connect</h3>
+                    <div class="footer-social">
+                        <a href="mailto:zachary_atalay@brown.edu" class="footer-social-link">
+                            <div class="footer-social-icon">📧</div>
+                        </a>
+                        <a href="https://github.com/zachatalay" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                            <div class="footer-social-icon">🐙</div>
+                        </a>
+                        <a href="https://linkedin.com/in/zachatalay" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                            <div class="footer-social-icon">💼</div>
+                        </a>
+                    </div>
+                    <p class="footer-email">zachary_atalay@brown.edu</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2025 Zach Atalay. Designed with ⚡ and built with cutting-edge tech.
+                </p>
+            </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
